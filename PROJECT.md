@@ -88,3 +88,7 @@ Added IMG_2145.jpeg at the end of Small Props, Big Details, after the guitar clo
 ### Additional character and set photographs
 
 Added IMG_2099.jpeg as guitarist-portrait.webp immediately after photo-03 in The Characters: Puppets & Personalities. This is a new standing solo portrait, distinct from the seated photo-03 and paired photo-04. Removed only the Instagram screenshot interface (crop 0,188–710,1262). Added IMG_2100.jpeg as apollo-miniature.webp and IMG_2115.jpeg as street-details.webp at the end of A World in Miniature. Landscape/set images have 900 px responsive copies. Total: 38 photographs; all prior images and videos retained.
+
+### Scrolling experience
+
+Added a thin gold reading-progress line and one-time fade/24 px upward entrances for chapter headings and photos. Native touch/wheel scrolling is preserved; no snap or scroll interception. Uses IntersectionObserver and Web Animations with content visible by default, including if JavaScript/animation support is absent. Respects reduced-motion preferences, including changes during a session, and finishes entrances on keyboard focus. Progress updates are batched with requestAnimationFrame and react to layout resize; hidden while the photo dialog is open. No dependencies or changes to media, chapter order, image dimensions or video controls.
