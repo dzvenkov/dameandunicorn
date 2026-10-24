@@ -54,3 +54,7 @@ Immediately after the unchanged opening video, show **The Characters: Puppets & 
 ### Crafting the Puppets
 
 The next chapter, after the finished characters, is **Crafting the Puppets** (“Изготовление кукол”). Screenshot numbers 1–8 map to asset IDs 01, 00, 07, 30, 28, 32, 21, 33, in that order. Move these eight existing photos out of the remaining gallery; do not duplicate them. All 34 photos and both videos are preserved. Unassigned photos still follow in their previous order.
+
+### Sketches & Finishing Touches
+
+After Crafting the Puppets, show **Sketches & Finishing Touches**: original asset IDs 20, 05, 02, 06. These show a costumed puppet beside her sketch (mark 1), face painting (2), costume sketches (3), and the unnumbered set sketch. Context-only fragments of adjacent photographs in the supplied screenshots are not new selections; photo-07 stays in Crafting the Puppets. Corrected photo-20's inaccurate alt description. All 34 photographs remain present once; 12 remain unassigned.
