@@ -62,3 +62,7 @@ After Crafting the Puppets, show **Sketches & Finishing Touches**: original asse
 ### Small Props, Big Details
 
 After Sketches & Finishing Touches, show **Small Props, Big Details** (the user's props group): original asset IDs 08, 09, 11, 12, 31, 34, 35. These are the chairs, upholstered chair, sofa, tiny paintbrush, guitar construction sketch/part, guitar parts, and finished miniature instrument. Repeated sofa/paintbrush views are included once. Partial adjacent street-set and puppet images are context only. Corrected alt descriptions of photo-09 and photo-31. All 34 photographs remain present once; five unassigned images remain: 10, 13, 14, 15, 26. Videos and existing chapters are preserved.
+
+### A World in Miniature
+
+The final photo chapter, after Small Props, Big Details, is **A World in Miniature** (sets/decorations). It contains asset IDs 10, 13, 14, 15, 26: street set on the workbench, shopfronts, car/street detail, illuminated night street, and pub interior with animator. Adjacent cropped chair, sofa, costume and guitar images in the reference screenshots remain in their previously assigned chapters. All 34 photos are now grouped into five chapters; no unassigned gallery remains. Opening and closing videos are unchanged.
