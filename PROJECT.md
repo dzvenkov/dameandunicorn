@@ -6,7 +6,7 @@ Project handoff, 24 October 2026. Based on the completed implementation conversa
 
 A super-lightweight gallery presenting the making of the stop-motion film **Dame and Unicorn**.
 
-- Live site: https://dzvenkov.github.io/dameandunicorn/
+- Live site: https://thedameandtheunicorn.com/
 - Source repository: https://github.com/dzvenkov/dameandunicorn
 - Source media folder: https://drive.google.com/drive/folders/1-8196JtJq_F3zpceJoKnZLXEMhff4Amw
 - GitHub owner: dzvenkov. Main branch: main. Hosting: GitHub Pages.
@@ -75,3 +75,8 @@ Workflow .github/workflows/domain.yml authenticates and reconciles DNS using the
 DNS configured and API-verified: apex A records 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; www CNAME dzvenkov.github.io. TTL 600.
 Successful setup run: https://github.com/dzvenkov/dameandunicorn/actions/runs/40131400549
 Remaining user step: set the Pages Custom domain to thedameandtheunicorn.com in repository Settings > Pages. The connected GitHub tools cannot modify this administration setting. Then verify DNS propagation and HTTPS certificate issuance, enable Enforce HTTPS, and confirm apex and www serve/redirect correctly. Do not report the domain live until checked.
+
+### Public domain verification
+
+Verified on 24 October 2026: public DNS resolves to GitHub Pages; https://thedameandtheunicorn.com/ serves the gallery with a valid certificate; https://www.thedameandtheunicorn.com/ redirects to the apex HTTPS address. CSS, JavaScript, opening poster and sample photo return HTTP 200. Custom domain is now configured in Pages.
+Remaining step: **Enforce HTTPS** in repository Settings > Pages. HTTP currently remains HTTP for both hostnames. Public verification workflow .github/workflows/check-domain.yml intentionally fails until these redirects are enabled. Verification run: https://github.com/dzvenkov/dameandunicorn/actions/runs/40131607649
