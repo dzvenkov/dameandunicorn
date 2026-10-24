@@ -2,7 +2,4 @@
 
 .photo-chapter{margin-top:58px}.photo-chapter h2{font-size:clamp(25px,3.2vw,42px);font-weight:400;line-height:1.2;letter-spacing:-.025em;margin:0;color:#dfd1b6;text-wrap:balance}.photo-chapter section.gallery{margin-top:28px}@media(max-width:700px){.photo-chapter{margin-top:38px}}
 
-/* The reading marker never intercepts pointer input or covers the photo viewer. */
-.scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:10;pointer-events:none;background:linear-gradient(90deg,#806539,#dfc58d);transform:scaleX(0);transform-origin:left center;box-shadow:0 0 12px #d4ad6255}
-body.viewer-open .scroll-progress{visibility:hidden}
-@media print{.scroll-progress{display:none}}
+.more-photos{margin:0 0 48px;border-top:1px solid #b9aa8d35}.more-photos summary{width:fit-content;padding:16px 4px;color:#c9b68e;font:14px/1.5 system-ui,sans-serif;cursor:pointer;letter-spacing:.08em}.more-photos summary:focus-visible{outline:2px solid #d4bd88;outline-offset:4px}.more-photos section.gallery{margin-top:12px}.more-photos:not([open])>section.gallery{display:none}
