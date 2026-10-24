@@ -50,3 +50,7 @@ Suggested opening request: “Continue the Dame and Unicorn site using this proj
 ## Photo grouping — 24 October 2026
 
 Immediately after the unchanged opening video, show **The Characters: Puppets & Personalities** (the user's “Куклы и образы”). Original asset IDs in the requested order: 03, 04, 16, 17, 18, 19, 22, 24, 23, 25. These correspond to screenshot marks 1–9 and 11; no separate photo 10 was supplied. The repeated view of photo-24 is included once. Remaining photos follow in their original order for later grouping. All 34 photos remain present once. Individual captions have not yet been supplied.
+
+### Crafting the Puppets
+
+The next chapter, after the finished characters, is **Crafting the Puppets** (“Изготовление кукол”). Screenshot numbers 1–8 map to asset IDs 01, 00, 07, 30, 28, 32, 21, 33, in that order. Move these eight existing photos out of the remaining gallery; do not duplicate them. All 34 photos and both videos are preserved. Unassigned photos still follow in their previous order.
