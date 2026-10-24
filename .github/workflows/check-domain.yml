@@ -1,0 +1,47 @@
+name: Verify public domain
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/check-domain.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check DNS, HTTPS, redirects, and assets
+        run: |
+          python3 -u - <<'PY'
+          import urllib.request, socket, sys
+          domain = "thedameandtheunicorn.com"
+          errors = []
+          for host in [domain, "www." + domain]:
+              try:
+                  print("DNS", host, sorted({r[4][0] for r in socket.getaddrinfo(host, 443)}))
+              except Exception as e:
+                  errors.append(str(e))
+              for scheme in ["https", "http"]:
+                  url = scheme + "://" + host + "/"
+                  try:
+                      with urllib.request.urlopen(url, timeout=25) as response:
+                          body = response.read().decode()
+                          print(url, "->", response.status, response.url)
+                          assert response.status == 200
+                          assert response.url == "https://" + domain + "/", "Expected canonical HTTPS redirect"
+                          assert "<h1>Dame and Unicorn</h1>" in body, "Expected gallery content"
+                  except Exception as e:
+                      errors.append(url + ": " + str(e))
+          for path in ["style.css", "gallery.js", "assets/opening.jpg", "assets/photo-03-small.webp"]:
+              try:
+                  request = urllib.request.Request("https://" + domain + "/" + path, method="HEAD")
+                  with urllib.request.urlopen(request, timeout=25) as response:
+                      assert response.status == 200
+                      print("Asset OK:", path)
+              except Exception as e:
+                  errors.append(path + ": " + str(e))
+          if errors:
+              for error in errors: print("FAILED:", error)
+              sys.exit(1)
+          print("PASS: HTTPS certificate, both hostnames, HTTP redirects, gallery content, and sample assets.")
+          PY
