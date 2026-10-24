@@ -13,7 +13,7 @@ A super-lightweight gallery presenting the making of the stop-motion film **Dame
 
 ## Agreed design and behavior
 
-- Only visible editorial text: title **Dame and Unicorn**, subtitle **Making of**.
+- Main title **Dame and Unicorn**, subtitle **Making of**. User-requested photo chapter headings are now included; individual captions will be supplied gradually.
 - Dark theme: warm charcoal, subtle tonal variation/amber glow, ivory text. More interesting than flat pure black.
 - Order: large opening video from e150a9…mp4, photo gallery, large closing video from b3940d…mp4.
 - Both published videos must have their audio streams physically removed; muting playback alone is insufficient.
@@ -46,3 +46,7 @@ A super-lightweight gallery presenting the making of the stop-motion film **Dame
 Continue this existing GitHub Pages site rather than rebuilding or moving hosting. Read the current repository first, preserve the agreed design and media order unless the user changes them, implement the requested modification, run checks appropriate to it, and report the resulting commit/deployment and any limitations. Keep progress updates brief and factual.
 
 Suggested opening request: “Continue the Dame and Unicorn site using this project summary. Inspect the current repository, then implement: [requested change].”
+
+## Photo grouping — 24 October 2026
+
+Immediately after the unchanged opening video, show **The Characters: Puppets & Personalities** (the user's “Куклы и образы”). Original asset IDs in the requested order: 03, 04, 16, 17, 18, 19, 22, 24, 23, 25. These correspond to screenshot marks 1–9 and 11; no separate photo 10 was supplied. The repeated view of photo-24 is included once. Remaining photos follow in their original order for later grouping. All 34 photos remain present once. Individual captions have not yet been supplied.
