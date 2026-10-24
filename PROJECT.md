@@ -84,3 +84,7 @@ Remaining step: **Enforce HTTPS** in repository Settings > Pages. HTTP currently
 ### Added instrument ensemble
 
 Added IMG_2145.jpeg at the end of Small Props, Big Details, after the guitar close-up. New optimized assets miniature-orchestra.webp (1170 × 1155) and miniature-orchestra-small.webp (900 px wide) show guitars, saxophone and drum kit. Total: 35 photographs across five chapters. Original upload remains untouched.
+
+### Additional character and set photographs
+
+Added IMG_2099.jpeg as guitarist-portrait.webp immediately after photo-03 in The Characters: Puppets & Personalities. This is a new standing solo portrait, distinct from the seated photo-03 and paired photo-04. Removed only the Instagram screenshot interface (crop 0,188–710,1262). Added IMG_2100.jpeg as apollo-miniature.webp and IMG_2115.jpeg as street-details.webp at the end of A World in Miniature. Landscape/set images have 900 px responsive copies. Total: 38 photographs; all prior images and videos retained.
