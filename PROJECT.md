@@ -80,3 +80,7 @@ Remaining user step: set the Pages Custom domain to thedameandtheunicorn.com in 
 
 Verified on 24 October 2026: public DNS resolves to GitHub Pages; https://thedameandtheunicorn.com/ serves the gallery with a valid certificate; https://www.thedameandtheunicorn.com/ redirects to the apex HTTPS address. CSS, JavaScript, opening poster and sample photo return HTTP 200. Custom domain is now configured in Pages.
 Remaining step: **Enforce HTTPS** in repository Settings > Pages. HTTP currently remains HTTP for both hostnames. Public verification workflow .github/workflows/check-domain.yml intentionally fails until these redirects are enabled. Verification run: https://github.com/dzvenkov/dameandunicorn/actions/runs/40131607649
+
+### Added instrument ensemble
+
+Added IMG_2145.jpeg at the end of Small Props, Big Details, after the guitar close-up. New optimized assets miniature-orchestra.webp (1170 × 1155) and miniature-orchestra-small.webp (900 px wide) show guitars, saxophone and drum kit. Total: 35 photographs across five chapters. Original upload remains untouched.
