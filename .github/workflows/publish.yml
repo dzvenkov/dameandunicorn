@@ -23,6 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install Pillow gdown
+      - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - run: python build_media.py
       - name: Save optimized media
         run: |
