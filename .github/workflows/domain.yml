@@ -1,0 +1,45 @@
+name: Check domain API access
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/domain.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Porkbun credentials and domain access
+        env:
+          PORKBUN_API_KEY: ${{ secrets.PORKBUN_API_KEY }}
+          PORKBUN_SECRET_API_KEY: ${{ secrets.PORKBUN_SECRET_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error, sys
+          domain = "thedameandtheunicorn.com"
+          credentials = {name: os.environ.get(env, "") for name, env in [
+              ("apikey", "PORKBUN_API_KEY"), ("secretapikey", "PORKBUN_SECRET_API_KEY")]}
+          if not all(credentials.values()):
+              sys.exit("One or both required repository secrets are missing or empty.")
+          print("Both repository secrets are available.")
+          def call(path):
+              request = urllib.request.Request("https://api.porkbun.com/api/json/v3/" + path,
+                  data=json.dumps(credentials).encode(), headers={"Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      data = json.load(response)
+              except urllib.error.HTTPError as error:
+                  sys.exit("Porkbun returned HTTP " + str(error.code))
+              if data.get("status") != "SUCCESS":
+                  sys.exit("Porkbun rejected request: " + str(data.get("message", "Unknown error")))
+              return data
+          call("ping")
+          print("Porkbun authentication succeeded.")
+          data = call("dns/retrieve/" + domain)
+          print("Domain API access confirmed: " + domain)
+          for record in data.get("records", []):
+              if record.get("type") in ("A", "AAAA", "ALIAS", "CNAME", "NS"):
+                  print(json.dumps({k: record.get(k) for k in ("id", "type", "name", "content", "ttl")}))
+          print("Read-only check complete. No DNS records changed.")
+          PY
