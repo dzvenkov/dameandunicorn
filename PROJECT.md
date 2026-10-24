@@ -58,3 +58,7 @@ The next chapter, after the finished characters, is **Crafting the Puppets** (â€
 ### Sketches & Finishing Touches
 
 After Crafting the Puppets, show **Sketches & Finishing Touches**: original asset IDs 20, 05, 02, 06. These show a costumed puppet beside her sketch (mark 1), face painting (2), costume sketches (3), and the unnumbered set sketch. Context-only fragments of adjacent photographs in the supplied screenshots are not new selections; photo-07 stays in Crafting the Puppets. Corrected photo-20's inaccurate alt description. All 34 photographs remain present once; 12 remain unassigned.
+
+### Small Props, Big Details
+
+After Sketches & Finishing Touches, show **Small Props, Big Details** (the user's props group): original asset IDs 08, 09, 11, 12, 31, 34, 35. These are the chairs, upholstered chair, sofa, tiny paintbrush, guitar construction sketch/part, guitar parts, and finished miniature instrument. Repeated sofa/paintbrush views are included once. Partial adjacent street-set and puppet images are context only. Corrected alt descriptions of photo-09 and photo-31. All 34 photographs remain present once; five unassigned images remain: 10, 13, 14, 15, 26. Videos and existing chapters are preserved.
