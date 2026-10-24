@@ -66,3 +66,12 @@ After Sketches & Finishing Touches, show **Small Props, Big Details** (the user'
 ### A World in Miniature
 
 The final photo chapter, after Small Props, Big Details, is **A World in Miniature** (sets/decorations). It contains asset IDs 10, 13, 14, 15, 26: street set on the workbench, shopfronts, car/street detail, illuminated night street, and pub interior with animator. Adjacent cropped chair, sofa, costume and guitar images in the reference screenshots remain in their previously assigned chapters. All 34 photos are now grouped into five chapters; no unassigned gallery remains. Opening and closing videos are unchanged.
+
+## Custom domain — 24 October 2026
+
+Purchased domain: **thedameandtheunicorn.com**, registrar and DNS provider Porkbun.
+Repository Actions secrets: PORKBUN_API_KEY and PORKBUN_SECRET_API_KEY. Never print or commit their values.
+Workflow .github/workflows/domain.yml authenticates and reconciles DNS using these secrets. It removes only known Porkbun parking records and stops on unexpected web-record conflicts. Other DNS records are preserved.
+DNS configured and API-verified: apex A records 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; www CNAME dzvenkov.github.io. TTL 600.
+Successful setup run: https://github.com/dzvenkov/dameandunicorn/actions/runs/40131400549
+Remaining user step: set the Pages Custom domain to thedameandtheunicorn.com in repository Settings > Pages. The connected GitHub tools cannot modify this administration setting. Then verify DNS propagation and HTTPS certificate issuance, enable Enforce HTTPS, and confirm apex and www serve/redirect correctly. Do not report the domain live until checked.
