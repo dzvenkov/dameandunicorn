@@ -1,4 +1,4 @@
-name: Check domain API access
+name: Configure domain DNS
 on:
   push:
     branches: [main]
@@ -23,9 +23,9 @@ jobs:
           if not all(credentials.values()):
               sys.exit("One or both required repository secrets are missing or empty.")
           print("Both repository secrets are available.")
-          def call(path):
+          def call(path, payload=None):
               request = urllib.request.Request("https://api.porkbun.com/api/json/v3/" + path,
-                  data=json.dumps(credentials).encode(), headers={"Content-Type": "application/json"})
+                  data=json.dumps({**credentials, **(payload or {})}).encode(), headers={"Content-Type": "application/json"})
               try:
                   with urllib.request.urlopen(request, timeout=30) as response:
                       data = json.load(response)
@@ -38,8 +38,30 @@ jobs:
           print("Porkbun authentication succeeded.")
           data = call("dns/retrieve/" + domain)
           print("Domain API access confirmed: " + domain)
-          for record in data.get("records", []):
-              if record.get("type") in ("A", "AAAA", "ALIAS", "CNAME", "NS"):
-                  print(json.dumps({k: record.get(k) for k in ("id", "type", "name", "content", "ttl")}))
-          print("Read-only check complete. No DNS records changed.")
+          records = data.get("records", [])
+          desired = [("A", domain, "185.199." + str(i) + ".153") for i in range(108, 112)]
+          desired.append(("CNAME", "www." + domain, "dzvenkov.github.io"))
+          # Only remove known Porkbun defaults. Preserve all unrelated records.
+          parking = [r for r in records if r.get("content") == "uixie.porkbun.com"
+                     and (r.get("name"), r.get("type")) in [(domain, "ALIAS"), ("*." + domain, "CNAME")]]
+          conflicts = [r for r in records if r not in parking
+                       and r.get("name") in (domain, "www." + domain)
+                       and r.get("type") in ("A", "AAAA", "ALIAS", "CNAME")
+                       and (r.get("type"), r.get("name"), r.get("content", "").rstrip(".")) not in desired]
+          if conflicts:
+              sys.exit("Unexpected existing web DNS records; stopping for review.")
+          for r in parking:
+              call("dns/delete/" + domain + "/" + str(r["id"]))
+              print("Removed default parking record: " + r["name"])
+          for kind, name, value in desired:
+              if not any(r.get("type") == kind and r.get("name") == name
+                         and r.get("content", "").rstrip(".") == value for r in records):
+                  call("dns/create/" + domain, {"name": "" if name == domain else "www",
+                       "type": kind, "content": value, "ttl": "600"})
+                  print("Created " + kind + " " + name + " -> " + value)
+          current = call("dns/retrieve/" + domain)["records"]
+          for kind, name, value in desired:
+              assert any(r["type"] == kind and r["name"] == name
+                         and r["content"].rstrip(".") == value for r in current), "DNS verification failed"
+          print("All five GitHub Pages DNS records verified via Porkbun API.")
           PY
